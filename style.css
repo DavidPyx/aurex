@@ -45,6 +45,7 @@ body {
   left: 37px;
   width: 200px;
   height: 50px;
+  cursor: pointer;
 }
 
 .brand-home:focus-visible {
@@ -76,8 +77,8 @@ body {
   opacity: 0.5;
 }
 
-.circle:hover,
-.outline:hover {
+.brand-home:hover .circle,
+.brand-home:hover .outline {
   transform: scale(1.08);
   background-color: var(--color-orange);
 }
@@ -101,8 +102,8 @@ body {
   top: 0;
 }
 
-.title:hover,
-.titleapp:hover {
+.brand-home:hover .title,
+.brand-home:hover .titleapp {
   transform: translateY(-2px);
   color: var(--color-orange);
 }
@@ -121,11 +122,11 @@ body {
 }
 
 .approach {
-  left: 52%;
+  left: 40%;
 }
 
 .vision {
-  left: 66%;
+  left: 50%;
 }
 
 .touch {
@@ -376,36 +377,290 @@ h1.slogan1 {
 }
 
 /* Approach page header */
-body.approach-page {
-  min-height: 100vh;
-}
-
-body.approach-page .container {
+.approach-header {
   width: calc(100% - 96px);
   height: 88px;
   margin: 0 auto;
   align-items: center;
 }
 
-body.approach-page .container::after {
+.approach-header::after {
   right: 0;
   left: 0;
 }
 
-body.approach-page .brand-home {
+.approach-brand {
   position: relative;
   top: auto;
   left: auto;
   flex: 0 0 200px;
 }
 
-body.approach-page .approach-nav {
+.approach-content {
+  min-height: 1962px;
+}
+
+.touch-page {
+  min-height: 1900px;
+}
+
+.touch-content {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1900px;
+  padding: 1px 8.33%;
+}
+
+.touch-eyebrow {
+  position: absolute;
+  top: 105px;
+  left: 8.33%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  color: var(--color-white);
+}
+
+.touch-eyebrow span {
+  color: var(--color-muted);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.touch-heading {
+  position: absolute;
+  top: 170px;
+  left: 8.33%;
+  max-width: 900px;
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(52px, 7vw, 80px);
+  line-height: 1.15;
+}
+
+.touch-description {
+  position: absolute;
+  top: 275px;
+  left: 8.33%;
+  max-width: 580px;
+  margin: 0;
+  color: var(--color-lavender);
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.contact-layout {
+  position: absolute;
+  top: 455px;
+  right: 8.33%;
+  left: 8.33%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) 1px minmax(0, 1.2fr);
+  align-items: stretch;
+  gap: 42px;
+}
+
+.contact-info {
+  align-self: center;
+  padding: 24px 0;
+}
+
+.contact-kicker {
+  margin: 0 0 12px;
+  color: var(--color-orange);
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-info h2,
+.contact-form-panel h2 {
+  margin: 0 0 16px;
+  color: var(--color-white);
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.contact-info > p:not(.contact-kicker) {
+  margin: 0 0 24px;
+  color: var(--color-lavender);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.contact-email {
+  color: var(--color-orange);
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+.contact-divider {
+  width: 1px;
+  background: linear-gradient(transparent, var(--color-orange), rgb(153 151 203 / 35%), transparent);
+}
+
+.contact-form-panel {
+  padding: 32px;
+  border: 1px solid rgb(153 151 203 / 35%);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgb(255 255 255 / 7%), rgb(255 255 255 / 2%));
+  box-shadow: 0 18px 50px rgb(0 0 0 / 18%);
+}
+
+.contact-form {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-form label {
+  margin-top: 6px;
+  color: var(--color-lavender);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgb(153 151 203 / 45%);
+  border-radius: 6px;
+  outline: none;
+  background: rgb(6 11 20 / 75%);
+  color: var(--color-white);
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 2px rgb(255 89 0 / 18%);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-submit {
+  justify-self: start;
+  margin-top: 10px;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--color-orange);
+  color: var(--color-white);
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  background: #e64f00;
+}
+
+.contact-submit:focus-visible,
+.contact-email:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 4px;
+}
+
+.after-contact {
+  position: absolute;
+  top: 1240px;
+  right: 8.33%;
+  left: 8.33%;
+}
+
+.after-contact > h2 {
+  margin: 0 0 32px;
+  color: var(--color-white);
+  font-size: 40px;
+}
+
+.after-contact-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 28px 0 0;
+  list-style: none;
+}
+
+.after-contact-list::before {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-orange), rgb(153 151 203 / 35%));
+  content: "";
+}
+
+.after-contact-step {
+  position: relative;
+  padding-top: 18px;
+}
+
+.after-contact-step::before {
+  position: absolute;
+  top: -27px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-orange);
+  border-radius: 50%;
+  background: #080d17;
+  box-shadow: 0 0 14px rgb(255 89 0 / 35%);
+  content: "";
+}
+
+.after-contact-number {
+  color: var(--color-orange);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.after-contact-step h3 {
+  margin: 8px 0;
+  color: var(--color-white);
+  font-size: 21px;
+}
+
+.after-contact-step p {
+  margin: 0;
+  color: var(--color-lavender);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.approach-nav {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
 
-body.approach-page .approach-nav a {
+.approach-nav a {
   position: absolute;
   top: 20px;
   right: auto;
@@ -415,43 +670,113 @@ body.approach-page .approach-nav a {
   pointer-events: auto;
 }
 
-body.approach-page .approach-nav a:hover {
+.approach-nav a:hover {
   color: var(--color-deep-hover);
 }
 
-body.approach-page .approach-nav .approach {
+.approach-nav .approach {
   right: calc(50% + 14px);
 }
 
-body.approach-page .approach-nav .vision {
+.approach-nav .vision {
   left: calc(50% + 14px);
 }
 
-body.approach-page .approach-nav .touch {
+.approach-nav .touch {
   right: 0;
 }
 
-body.approach-page .approach[aria-current="page"] {
+.approach-nav .approach[aria-current="page"] {
   color: var(--color-white);
+}
+
+.approach-cards {
+  top: 800px;
+  right: 100px;
+  left: 100px;
+}
+
+.timeline {
+  position: absolute;
+  top: 1180px;
+  right: 100px;
+  left: 100px;
+  max-width: 800px;
+  margin: 0;
+}
+
+.timeline-heading {
+  position: static;
+  margin: 0 0 32px;
+  color: var(--color-white);
+  font-size: 40px;
+}
+
+.timeline-list {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 42px;
+  list-style: none;
+}
+
+.timeline-list::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  width: 2px;
+  background: linear-gradient(var(--color-orange), rgb(153 151 203 / 35%));
+  content: "";
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 32px;
+}
+
+.timeline-item::before {
+  position: absolute;
+  top: 6px;
+  left: -40px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-orange);
+  border-radius: 50%;
+  background: #080d17;
+  box-shadow: 0 0 14px rgb(255 89 0 / 45%);
+  content: "";
+}
+
+.timeline-content h3 {
+  margin: 0 0 8px;
+  color: var(--color-orange);
+  font-size: 26px;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: var(--color-lavender);
+  font-size: 19px;
+  line-height: 1.6;
 }
 
 /* Small-screen layout */
 @media (max-width: 700px) {
-  body:not(.approach-page) {
+  body {
     min-height: max(100vh, 2250px);
   }
 
-  body:not(.approach-page) .approach {
+  .home-header .approach {
     left: 47%;
     font-size: 10px;
   }
 
-  body:not(.approach-page) .vision {
+  .home-header .vision {
     left: 65%;
     font-size: 10px;
   }
 
-  body:not(.approach-page) .touch {
+  .home-header .touch {
     right: 2%;
     font-size: 10px;
   }
@@ -495,27 +820,153 @@ body.approach-page .approach[aria-current="page"] {
     font-size: 13px;
   }
 
-  body.approach-page .container {
+  .approach-header {
     width: calc(100% - 40px);
   }
 
-  body.approach-page .brand-home {
+  .touch-page,
+  .touch-content {
+    min-height: 2350px;
+  }
+
+  .touch-content {
+    padding: 1px 24px;
+  }
+
+  .touch-eyebrow {
+    top: 80px;
+    left: 24px;
+    gap: 12px;
+  }
+
+  .touch-eyebrow span {
+    font-size: 20px;
+  }
+
+  .touch-heading {
+    top: 145px;
+    right: 24px;
+    left: 24px;
+    font-size: clamp(46px, 12vw, 62px);
+  }
+
+  .touch-description {
+    top: 300px;
+    right: 24px;
+    left: 24px;
+    font-size: 18px;
+  }
+
+  .contact-layout {
+    top: 430px;
+    right: 24px;
+    left: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .contact-info {
+    padding: 0;
+  }
+
+  .contact-info h2,
+  .contact-form-panel h2 {
+    font-size: 26px;
+  }
+
+  .contact-info > p:not(.contact-kicker) {
+    font-size: 16px;
+  }
+
+  .contact-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-orange), rgb(153 151 203 / 35%), transparent);
+  }
+
+  .contact-form-panel {
+    padding: 22px 18px;
+  }
+
+  .after-contact {
+    top: 1500px;
+    right: 24px;
+    left: 24px;
+  }
+
+  .after-contact > h2 {
+    font-size: 32px;
+  }
+
+  .after-contact-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0 0 0 30px;
+  }
+
+  .after-contact-list::before {
+    top: 8px;
+    right: auto;
+    bottom: 8px;
+    left: 7px;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(var(--color-orange), rgb(153 151 203 / 35%));
+  }
+
+  .after-contact-step {
+    padding: 0 0 28px;
+  }
+
+  .after-contact-step::before {
+    top: 6px;
+    left: -30px;
+  }
+
+  .approach-content {
+    min-height: 3512px;
+  }
+
+  .approach-cards {
+    top: 1650px;
+    right: 24px;
+    left: 24px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .timeline {
+    top: 2600px;
+    right: 24px;
+    left: 20px;
+  }
+
+  .timeline-heading {
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
+
+  .timeline-content p {
+    font-size: 17px;
+  }
+
+  .approach-brand {
     flex-basis: 110px;
   }
 
-  body.approach-page .approach-nav {
+  .approach-nav {
     inset: 0 -12px 0 0;
   }
 
-  body.approach-page .approach-nav a {
+  .approach-nav a {
     font-size: 11px;
   }
 
-  body.approach-page .approach-nav .approach {
+  .approach-nav .approach {
     right: calc(50% + 8px);
   }
 
-  body.approach-page .approach-nav .vision {
+  .approach-nav .vision {
     left: calc(50% + 8px);
   }
 }
@@ -546,7 +997,7 @@ body.approach-page .approach[aria-current="page"] {
 
 }
 
-.t7 {
+.philosophy-description {
   position: absolute;
   top: 400px;
   left: 100px;
@@ -554,5 +1005,65 @@ body.approach-page .approach[aria-current="page"] {
   color: var(--color-white);
   font-size: 25px;
   line-height: 1.8;
-  color: #6d6ab7;
+  color: #aa9fdb;
+}
+
+.service {
+  position: absolute;
+  top: 1450px;
+  right: 450px;
+  padding: 30px;
+  border: 0;
+  border-radius: 12px;
+  background-color: #6d6ab7;
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.service:hover {
+  transform: translateY(-2px);
+  color: var(--color-deep-hover);
+}
+
+.services-heading {
+  position: absolute;
+  top: 1147px;
+  right: 500px;
+  color: var(--color-white);
+  font-size: 40px;
+}
+
+.service-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+
+.team-description {
+  position: absolute;
+  top: 1260px;
+  left: calc(50% + 200px);
+  right: auto;
+  width: min(520px, calc(100% - 48px));
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .services-heading {
+    left: 24px;
+    right: 24px;
+    text-align: center;
+  }
+
+  .team-description {
+    left: 50%;
+  }
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get in touch with Aurex." />
+    <title>aurex - Get In Touch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="touch-page">
+    <header class="container approach-header">
+      <a class="brand-home approach-brand" href="index.html" aria-label="Aurex home">
+        <span class="circle"></span>
+        <span class="outline" aria-hidden="true"></span>
+        <span class="titleapp">aurex</span>
+      </a>
+      <nav class="approach-nav" aria-label="Main navigation">
+        <a class="approach" href="approach.html">Our Approach</a>
+        <a class="vision" href="vision.html">Our Vision</a>
+        <a class="touch" href="touch.html" aria-current="page">Get In Touch ↗</a>
+      </nav>
+    </header>
+    <main class="touch-content">
+      <p class="touch-eyebrow">──── <span>Get in touch</span></p>
+      <h1 class="touch-heading">Let's <span class="orange1">build</span> something</h1>
+      <p class="touch-description">Have an idea, a project, or a challenge? We'd love to hear about it. Let's turn your vision into reality.</p>
+      <div class="contact-layout">
+        <section class="contact-info" aria-labelledby="contact-info-heading">
+          <p class="contact-kicker">Contact information</p>
+          <h2 id="contact-info-heading">Let's talk about what's next.</h2>
+          <p>Have a question or want to discuss a project? Reach us directly or send a message.</p>
+          <a class="contact-email" href="mailto:hello@aurex.com">hello@aurex.com</a>
+        </section>
+        <div class="contact-divider" aria-hidden="true"></div>
+        <section class="contact-form-panel" aria-labelledby="contact-form-heading">
+          <h2 id="contact-form-heading">Send us a message!</h2>
+          <form
+            class="contact-form"
+            action="https://YOUR_PROJECT_REF.supabase.co/functions/v1/contact"
+            method="post"
+          >
+            <label for="contact-name">Your name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="120" required />
+
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" name="subject" type="text" maxlength="160" required />
+
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" maxlength="5000" required></textarea>
+
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="contact-website">Leave this field empty</label>
+              <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button class="contact-submit" type="submit">Send message</button>
+          </form>
+        </section>
+      </div>
+      <section class="after-contact" aria-labelledby="after-contact-heading">
+        <h2 id="after-contact-heading">After you reach out.</h2>
+        <ol class="after-contact-list">
+          <li class="after-contact-step">
+            <span class="after-contact-number">01</span>
+            <div>
+              <h3>We receive your message</h3>
+              <p>Your inquiry reaches our team.</p>
+            </div>
+          </li>
+          <li class="after-contact-step">
+            <span class="after-contact-number">02</span>
+            <div>
+              <h3>We review your idea</h3>
+              <p>We understand your needs and requirements.</p>
+            </div>
+          </li>
+          <li class="after-contact-step">
+            <span class="after-contact-number">03</span>
+            <div>
+              <h3>We get back to you</h3>
+              <p>We discuss possible next steps.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
