@@ -397,6 +397,7 @@ h1.slogan1 {
 }
 
 .approach-content {
+  position: relative;
   min-height: 1962px;
 }
 
@@ -691,17 +692,23 @@ h1.slogan1 {
 }
 
 .approach-cards {
-  top: 800px;
+  top: 712px;
   right: 100px;
   left: 100px;
 }
 
-.timeline {
+.approach-lower {
   position: absolute;
-  top: 1180px;
+  top: 1059px;
   right: 100px;
   left: 100px;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.timeline {
+  min-width: 0;
   margin: 0;
 }
 
@@ -758,6 +765,60 @@ h1.slogan1 {
   color: var(--color-lavender);
   font-size: 19px;
   line-height: 1.6;
+}
+
+.about-aurex {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding-left: 48px;
+}
+
+.about-aurex::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(var(--color-orange), rgb(153 151 203 / 35%));
+  content: "";
+}
+
+.services-heading {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 40px;
+}
+
+.team-description {
+  margin: 0;
+  color: var(--color-lavender);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  border: 0;
+  border-radius: 12px;
+  background-color: #6d6ab7;
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.service:hover {
+  transform: translateY(-2px);
+  color: var(--color-deep-hover);
 }
 
 /* Small-screen layout */
@@ -924,21 +985,23 @@ h1.slogan1 {
   }
 
   .approach-content {
-    min-height: 3512px;
+    min-height: 3800px;
   }
 
   .approach-cards {
-    top: 1650px;
+    top: 1562px;
     right: 24px;
     left: 24px;
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
-  .timeline {
-    top: 2600px;
+  .approach-lower {
+    top: 2512px;
     right: 24px;
-    left: 20px;
+    left: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 
   .timeline-heading {
@@ -948,6 +1011,29 @@ h1.slogan1 {
 
   .timeline-content p {
     font-size: 17px;
+  }
+
+  .about-aurex {
+    gap: 20px;
+    padding: 36px 0 0;
+  }
+
+  .about-aurex::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-orange), rgb(153 151 203 / 35%));
+  }
+
+  .services-heading {
+    font-size: 32px;
+  }
+
+  .team-description {
+    font-size: 18px;
   }
 
   .approach-brand {
@@ -973,14 +1059,14 @@ h1.slogan1 {
 
 .l5 {
   position: absolute;
-  top: 150px;
+  top: 62px;
   left: 100px;
   color: var(--color-white);
 }
 
 .t6 {
   position: absolute;
-  top: 135px;
+  top: 47px;
   left: 160px;
   color: var(--color-muted);
   font-size: 25px;
@@ -989,7 +1075,7 @@ h1.slogan1 {
 
 .slogan3 {
   position: absolute;
-  top: 200px;
+  top: 112px;
   left: 100px;
   color: var(--color-white);
   font-size: 70px;
@@ -999,7 +1085,7 @@ h1.slogan1 {
 
 .philosophy-description {
   position: absolute;
-  top: 400px;
+  top: 312px;
   left: 100px;
   width: min(32%, 520px);
   color: var(--color-white);
@@ -1008,62 +1094,7 @@ h1.slogan1 {
   color: #aa9fdb;
 }
 
-.service {
-  position: absolute;
-  top: 1450px;
-  right: 450px;
-  padding: 30px;
-  border: 0;
-  border-radius: 12px;
-  background-color: #6d6ab7;
-  color: var(--color-white);
-  cursor: pointer;
-  font-family: var(--font-display);
-  font-size: 25px;
-  font-weight: bold;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.service:hover {
-  transform: translateY(-2px);
-  color: var(--color-deep-hover);
-}
-
-.services-heading {
-  position: absolute;
-  top: 1147px;
-  right: 500px;
-  color: var(--color-white);
-  font-size: 40px;
-}
-
 .service-link {
   color: var(--color-white);
   text-decoration: none;
-}
-
-
-.team-description {
-  position: absolute;
-  top: 1260px;
-  left: calc(50% + 200px);
-  right: auto;
-  width: min(520px, calc(100% - 48px));
-  margin: 0;
-  transform: translateX(-50%);
-  font-size: 20px;
-  line-height: 1.7;
-  text-align: center;
-}
-
-@media (max-width: 700px) {
-  .services-heading {
-    left: 24px;
-    right: 24px;
-    text-align: center;
-  }
-
-  .team-description {
-    left: 50%;
-  }
 }
